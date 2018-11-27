@@ -1,0 +1,204 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>湖北省咸宁市消防支队官兵语音汇报平台</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/jPlayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css" rel="stylesheet" />
+    <link href="~/layer/theme/default/layer.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column" id="wrapper">
+                <div class="alert alert-success">
+                    <h2 style="margin-bottom: 20px;text-align:center;">
+                        @*录音 - 播放 - 暂停 - 上传*@
+                        湖北省咸宁市消防支队官兵语音汇报平台
+                    </h2>
+                </div>
+                <div class="btn-group btn-group-lg col-lg-5">
+                    <button id="record" class="btn btn-default" type="button" onclick="record();"><em class="glyphicon glyphicon-record"></em> 录音</button>
+                    <button id="play" class="btn btn-default" type="button" onclick="play();"><em class="glyphicon glyphicon-play"></em> 播放</button>
+                    <button id="stop" class="btn btn-default" type="button" onclick="stop();"><em class="glyphicon glyphicon-pause"></em> 暂停</button>
+                    <button id="upload" class="btn btn-default" type="button" onclick="upload();"><em class="glyphicon glyphicon-upload"></em> 上传</button>
+                </div>
+                <div class="alert alert-info col-lg-5 col-lg-offset-2">
+                    <h4 style="margin-bottom: 0px"><strong>当前录音时长：</strong> <span id="time">0:00</span></h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <h3>语音汇报列表：</h3>
+                <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                    <div class="jp-type-playlist">
+                        <div class="jp-gui jp-interface">
+                            <div class="jp-controls">
+                                <button class="jp-previous" role="button" tabindex="0">previous</button>
+                                <button class="jp-play" role="button" tabindex="0">play</button>
+                                <button class="jp-next" role="button" tabindex="0">next</button>
+                                <button class="jp-stop" role="button" tabindex="0">stop</button>
+                            </div>
+                            <div class="jp-progress">
+                                <div class="jp-seek-bar">
+                                    <div class="jp-play-bar"></div>
+                                </div>
+                            </div>
+                            <div class="jp-volume-controls">
+                                <button class="jp-mute" role="button" tabindex="0">mute</button>
+                                <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+                                <div class="jp-volume-bar">
+                                    <div class="jp-volume-bar-value"></div>
+                                </div>
+                            </div>
+                            <div class="jp-time-holder">
+                                <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+                                <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+                            </div>
+                            <div class="jp-toggles">
+                                <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+                                <button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+                            </div>
+                        </div>
+                        <div class="jp-playlist">
+                            <ul>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </div>
+                        <div class="jp-no-solution">
+                            <span>Update Required</span>
+                            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/recorder.js/recorder.js")"></script>
+    <script type="text/javascript">
+
+        function timecode(ms) {
+            var hms = {
+                h: Math.floor(ms / (60 * 60 * 1000)),
+                m: Math.floor((ms / 60000) % 60),
+                s: Math.floor((ms / 1000) % 60)
+            };
+            var tc = []; // Timecode array to be joined with '.'
+
+            if (hms.h > 0) {
+                tc.push(hms.h);
+            }
+
+            tc.push((hms.m < 10 && hms.h > 0 ? "0" + hms.m : hms.m));
+            tc.push((hms.s < 10 ? "0" + hms.s : hms.s));
+
+            return tc.join(':');
+        }
+
+
+        Recorder.initialize({
+            swfSrc: "@Url.Content("~/recorder.js/recorder.swf")"
+        });
+
+        function record() {
+            Recorder.record({
+                start: function () {
+                    //alert("recording starts now. press stop when youre done. and then play or upload if you want.");
+                },
+                progress: function (milliseconds) {
+                    document.getElementById("time").innerHTML = timecode(milliseconds);
+                }
+            });
+        }
+
+        function play() {
+            Recorder.stop();
+            Recorder.play({
+                progress: function (milliseconds) {
+                    document.getElementById("time").innerHTML = timecode(milliseconds);
+                }
+            });
+        }
+
+        function stop() {
+            Recorder.stop();
+        }
+
+        function upload() {
+            Recorder.upload({
+                method: "POST",
+                url: "/Home/upload",
+                audioParam: "audio",
+                params: {
+                    "_method": "PUT"
+                },
+                success: function (result) {
+                    //alert("your file was uploaded!");
+                    //console.log(result);
+                    if (result != null && result.status == 1) {               
+                        layer.msg("语音上传成功！");
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+                    }
+                },
+                error: function (e) {
+                    layer.msg(e);
+                }
+            });
+        }
+    </script>
+    <script src="@Url.Content("~/jPlayer/dist/jplayer/jquery.jplayer.min.js")"></script>
+    <script src="~/jPlayer/dist/add-on/jplayer.playlist.min.js"></script>
+    <script src="~/layer/layer.js"></script>
+    <script type="text/javascript">
+
+        var playList;
+
+        $(function () {
+           playList = new jPlayerPlaylist({
+                jPlayer: "#jquery_jplayer_1",
+                cssSelectorAncestor: "#jp_container_1"
+            }, [], {
+                    swfPath: "@Url.Content("~/jPlayer/dist/jplayer")",
+                    supplied: "oga, mp3,wav", // webmv,m4v,ogv,
+                    wmode: "window",
+                    useStateClassSkin: true,
+                    autoBlur: false,
+                    smoothPlayBar: true,
+                    keyEnabled: true
+                });
+
+            loadList(playList);     
+        });
+
+        function loadList(player) {
+            $.ajax({
+                type: 'post',
+                url: '/Home/GetDatas',
+                dataType: 'json',
+                success: function (result) {
+                    console.log(result);
+                    if (result != null && result.status == 1) {
+                        player.setPlaylist([]);
+                        player.setPlaylist(result.data);
+                    }
+                },
+                error: function (e) {
+                    layer.msg(e);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

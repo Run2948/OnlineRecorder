@@ -88,19 +88,128 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="jPlayer\dist\add-on\jplayer.playlist.js" />
+    <Content Include="jPlayer\dist\add-on\jplayer.playlist.min.js" />
+    <Content Include="jPlayer\dist\add-on\jquery.jplayer.inspector.js" />
+    <Content Include="jPlayer\dist\add-on\jquery.jplayer.inspector.min.js" />
+    <Content Include="jPlayer\dist\jplayer\jquery.jplayer.js" />
+    <Content Include="jPlayer\dist\jplayer\jquery.jplayer.min.js" />
+    <Content Include="jPlayer\dist\jplayer\jquery.jplayer.swf" />
+    <Content Include="jPlayer\dist\popcorn\popcorn.jplayer.js" />
+    <Content Include="jPlayer\dist\popcorn\popcorn.jplayer.min.js" />
+    <Content Include="jPlayer\dist\skin\blue.monday\css\jplayer.blue.monday.css" />
+    <Content Include="jPlayer\dist\skin\blue.monday\css\jplayer.blue.monday.min.css" />
+    <Content Include="jPlayer\dist\skin\blue.monday\image\jplayer.blue.monday.jpg" />
+    <Content Include="jPlayer\dist\skin\blue.monday\image\jplayer.blue.monday.seeking.gif" />
+    <Content Include="jPlayer\dist\skin\blue.monday\image\jplayer.blue.monday.video.play.png" />
+    <Content Include="jPlayer\dist\skin\blue.monday\mustache\jplayer.blue.monday.audio.playlist.html" />
+    <Content Include="jPlayer\dist\skin\blue.monday\mustache\jplayer.blue.monday.audio.single.html" />
+    <Content Include="jPlayer\dist\skin\blue.monday\mustache\jplayer.blue.monday.audio.stream.html" />
+    <Content Include="jPlayer\dist\skin\blue.monday\mustache\jplayer.blue.monday.video.playlist.html" />
+    <Content Include="jPlayer\dist\skin\blue.monday\mustache\jplayer.blue.monday.video.single.html" />
+    <Content Include="jPlayer\dist\skin\pink.flag\css\jplayer.pink.flag.css" />
+    <Content Include="jPlayer\dist\skin\pink.flag\css\jplayer.pink.flag.min.css" />
+    <Content Include="jPlayer\dist\skin\pink.flag\image\jplayer.pink.flag.jpg" />
+    <Content Include="jPlayer\dist\skin\pink.flag\image\jplayer.pink.flag.seeking.gif" />
+    <Content Include="jPlayer\dist\skin\pink.flag\image\jplayer.pink.flag.video.play.png" />
+    <Content Include="jPlayer\dist\skin\pink.flag\mustache\jplayer.pink.flag.audio.playlist.html" />
+    <Content Include="jPlayer\dist\skin\pink.flag\mustache\jplayer.pink.flag.audio.single.html" />
+    <Content Include="jPlayer\dist\skin\pink.flag\mustache\jplayer.pink.flag.audio.stream.html" />
+    <Content Include="jPlayer\dist\skin\pink.flag\mustache\jplayer.pink.flag.video.playlist.html" />
+    <Content Include="jPlayer\dist\skin\pink.flag\mustache\jplayer.pink.flag.video.single.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-01-android.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-01-solution-flash-html.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-01-supplied-mp3.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-01-video-solution-flash-html.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-01-video-supplied-m4v.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-01-video-supplied-rtmpv.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-01-video.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-01.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-02-jPlayerPlaylist.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-02-media-solution-flash-html.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-02-media.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-02-multi.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-02-video.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-02.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-03-together.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-03-video.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-03.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-08.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-09-popcorn-video-solution-flash-html.html" />
+    <Content Include="jPlayer\examples\blue.monday\demo-09-popcorn-video.html" />
+    <Content Include="jPlayer\examples\blue.monday\jPlayer-tester.html" />
+    <Content Include="jPlayer\examples\other\demo-04.html" />
+    <Content Include="jPlayer\examples\other\demo-05.html" />
+    <Content Include="jPlayer\examples\other\demo-07.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-01-android.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-01-solution-flash-html.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-01-supplied-mp3.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-01-video-solution-flash-html.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-01-video-supplied-m4v.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-01-video-supplied-rtmpv.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-01-video.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-01.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-02-jPlayerPlaylist.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-02-media-solution-flash-html.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-02-media.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-02-multi.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-02-video.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-02.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-03-together.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-03-video.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-03.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-08.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-09-popcorn-video-solution-flash-html.html" />
+    <Content Include="jPlayer\examples\pink.flag\demo-09-popcorn-video.html" />
+    <Content Include="jPlayer\examples\pink.flag\jPlayer-tester.html" />
+    <Content Include="layer\layer.js" />
+    <Content Include="layer\mobile\layer.js" />
+    <Content Include="layer\mobile\need\layer.css" />
+    <Content Include="layer\theme\default\icon-ext.png" />
+    <Content Include="layer\theme\default\icon.png" />
+    <Content Include="layer\theme\default\layer.css" />
+    <Content Include="layer\theme\default\loading-0.gif" />
+    <Content Include="layer\theme\default\loading-1.gif" />
+    <Content Include="layer\theme\default\loading-2.gif" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="recorder.js\examples\example-1.html" />
+    <Content Include="recorder.js\examples\example-2.html" />
+    <Content Include="recorder.js\examples\example.css" />
+    <Content Include="recorder.js\examples\soundcloud-callback.html" />
+    <Content Include="recorder.js\recorder.js" />
+    <Content Include="recorder.js\recorder.swf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Scripts\jquery-1.9.0.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.0.js" />
+    <Content Include="Scripts\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AudioItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.9.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,8 +219,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineRecorder", "OnlineRecorder\OnlineRecorder.csproj", "{36A88FEC-B66A-4F60-8940-DBEE95C72C37}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{4208F838-217D-4620-AEED-08DA1B3C5A06}"
+	ProjectSection(SolutionItems) = preProject
+		1.png = 1.png
+		ReadMe.md = ReadMe.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
